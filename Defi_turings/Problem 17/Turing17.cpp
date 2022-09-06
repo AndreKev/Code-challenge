@@ -1,4 +1,41 @@
 // Problem Statement
+/*
+    Let d(n) be the sum of the clean divisors of n(all divisors of n strictly less_ than n).
+    if d(a)=b and d(b)=a, with distinct a, b; then a and b are said
+        to be friends.
+    
+    For exemple, the clean divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110.
+    Hence d(220) = 284.
+    The clean divisors of 284 are 1, 2, 4,71 and 142. 
+    Hence d(284) = 220.
+    Therefore 220 and 284 are friends. 
+
+    So 220 and 284 are friends. The sum of all friends between 1 and 1000 is 220 + 284 = 504.
+
+    What is the sum of all friends between 1 and 100000 ?
+*/
+
+// Analysis
+/*
+    We already know that the sum of friends between 1 and 1000 is 504. 
+    Good. We will add it to the friends between 1000 and 100000.
+
+    if a and b are friends and distinct,
+        [1] d(b) = a 
+        [2] d(a) = b,
+    by substituting [2] in [1], we obtain
+        [3] d(d(a)) = a; and a different from d(a)l
+    Which is a sufficient condition to have (a, b) friends, with a and d(a) different.
+    
+    To know the sum of clean factors of a number we need to find them.
+    We can determine all the factors of a number by combining the multiples of its prime factors.
+
+    Example ::  24      = pow(2, 3) * pow(3, 1)
+                fact(24)= {pow(2, 0)*pow(3, 0), pow(2, 0)*pow(3, 1), pow(2, 1)*pow(3, 0), pow(2, 1)*pow(3, 1),
+                        pow(2, 2)*pow(3, 0), pow(2, 2)*pow(3, 1), pow(2, 3)*pow(3, 0), pow(2, 3)*pow(3, 1)
+                } 
+    Hence we listed all the possible combinations of its algorithms.
+*/
 #include <iostream>
 #include <vector>
 #include <map>
