@@ -36,4 +36,4 @@ def main(heads):
     print("The time is :", time.time()-t)
 
 if __name__ == "__main__":
-    main(4)
+    main(5)
