@@ -9,7 +9,7 @@ class Hydre{
         void attack();
         bool is_alive();
         long long get_hits();
-    
+
     private:
         stack<int> heads;
         long long hits = 0;
@@ -26,19 +26,18 @@ bool Hydre::is_alive(){
 // Attack the hydra.
 void Hydre::attack(){
     int back = heads.top(); heads.pop();
-    if (back==1){
-        hits += 1;
-    } else if (back==2){
-        hits += 1;
+    hits += 1;
+    if (back==2){
         hits = 2*hits+1;
     }
-    else {
-        back -= 1; hits += 1;
+    else if (back>2){
+        back -= 1;
         for (int i=0; i<=hits; i++){
             heads.push(back);
         }
     }
 }
+
 // Getter method for hits
 long long Hydre::get_hits(){
     return hits;
