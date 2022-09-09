@@ -14,6 +14,7 @@ class Hydre{
         stack<int> heads;
         long long hits = 0;
 };
+
 // Constructor of the class
 Hydre::Hydre(int int_heads){
     heads.push(int_heads);
@@ -28,7 +29,9 @@ void Hydre::attack(){
     if (back==1){
         hits += 1;
     } else if (back==2){
+        hits += 1;
         hits = 2*hits+1;
+    }
     else {
         back -= 1; hits += 1;
         for (int i=0; i<=hits; i++){
