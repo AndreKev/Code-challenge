@@ -1,4 +1,4 @@
-// How can I generate combinatios with C++
+// How can I generate combinations with C++
 #include <iostream>
 #include <vector>
 #include <list>
