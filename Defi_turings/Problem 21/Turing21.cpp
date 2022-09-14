@@ -46,7 +46,7 @@ vector<int> generate(list<int> digits, int front, int remainder){
             //for (int i=0; i<remainder; i++) cout << "\t";
             //    cout << aux_dig << endl;
             digits.pop_back();
-            if (aux_dig>0)
+            if ((aux_dig>0))    // remainder == 0 will avoid having redundance
                 aux_years.push_back(aux_dig); // Adding the digits with the actual front
             // Add the elements of the Generate... to the actual years
             for (int element: generate(digits, aux_dig, remainder-1)){
