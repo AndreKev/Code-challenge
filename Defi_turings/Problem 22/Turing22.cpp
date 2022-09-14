@@ -21,7 +21,6 @@ int main(){
                 if (sum!=0) 
                     MAX=i;  // this will break the loop
                 sum += i;
-
             }
     }
     cout << "Problem 22: " << sum << endl;

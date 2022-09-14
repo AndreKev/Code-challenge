@@ -41,7 +41,7 @@ vector<int> sum(vector<vector<int>> prods){
 	return vsum;
 }
 
-vector<int> v(int n){
+vector<int> v(int n){	// to create a vector with a number
 	vector<int> w;
 	int prod=n, aux;
 	while (prod){
