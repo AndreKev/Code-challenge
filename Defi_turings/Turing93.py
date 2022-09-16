@@ -1,6 +1,3 @@
-from pydantic import NumberNotGtError
-
-
 class Turing193:
     def __init__(self, ):
         self.known = {}
