@@ -14,6 +14,8 @@
         "hash_map": "cpp",
         "hash_set": "cpp",
         "slist": "cpp",
-        "iosfwd": "cpp"
-    }
+        "iosfwd": "cpp",
+        "complex": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
