@@ -1,5 +1,24 @@
 #include <stdio.h>
-int isMatch(char * s, char * p){
+int isMatch(char *s, char *p){
+    int i=0,j=0;
+    while (p[j]){
+        if (p[j]=='*'){
+            
+        } else if (s[i]!=p[j])
+            if (p[++j]!='*')
+                return 0;
+            else ++j;
+        else
+            if (p[++j]=='*')
+                continue;
+            else{
+                i++;
+            }
+    }
+}
+
+
+int isMatch2(char * s, char * p){
     int i =0, j=0;
     while (p[j]){
         if (p[j]=='.'){
@@ -25,7 +44,7 @@ int isMatch(char * s, char * p){
 }
 
 int main(){
-    char s[] = "aa";
-    char p[] = "b*a*a*";
-    printf("%d\n", isMatch(s, p));
+    char s[] = "aab";
+    char p[] = "aab";
+    printf("%d\n", isMatch2(s, p));
 }
