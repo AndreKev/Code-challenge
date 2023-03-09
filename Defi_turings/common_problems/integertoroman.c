@@ -1,7 +1,8 @@
-#include <stdio.h>>
+#include <stdio.h>
 
 char * intToRoman(int num){
-    static char *string[100];
+    static char output[100];
+    char *string = output;
     unsigned char i = 0;
     char div;
     while (num){
@@ -10,7 +11,7 @@ char * intToRoman(int num){
             string[i++] = 'M';
         num %= 1000;
         div = num/100;
-        while (div){
+        if (div){
             if (div>8){
                 string[i++] = 'C';
                 string[i++] = 'M';
@@ -27,29 +28,26 @@ char * intToRoman(int num){
                 while (div--)
                     string[i++] = 'C';
             }
-            div--;
         }
         num %= 100;
         div = num/10;
-        while (div){
+        if (div){
             if (div>8){
                 string[i++] = 'X';
                 string[i++] = 'C';
             } else if (div==4){
-                string[i++] = 'C';
+                string[i++] = 'X';
                 string[i++] = 'L';
             } else if (div<4){
-                while (div>0){
+                while (div-->0){
                     string[i++] = 'X';
-                    div--;
                 }
             } else { //  if (div>4)
                 div -= 5;
                 string[i++] = 'L';
                 while (div--)
-                    {string[i++] = 'X'; printf("%s", string);}
+                    string[i++] = 'X';
             }
-            div--;
         }
         num %= 10;
         div = num;
@@ -61,25 +59,25 @@ char * intToRoman(int num){
                 string[i++] = 'I';
                 string[i++] = 'V';
             } else if (div<4){
-                printf("Entered\n");
                 while (div>0){
-                    printf("hey");
                     string[i++] = 'I';
                     div--;
                 }
             } else { //  if (div>4)
                 div -= 5;
                 string[i++] = 'V';
-                string[i++] = 'I';
+                while(div--)
+                    string[i++] = 'I';
             }
         }
         num = 0;
     }
     string[i] = '\0';
-    return string;
+    return output;
 }
 
 int main(){
-    intToRoman(3);
-    //printf("%s\n", intToRoman(3));
+    int n = 1;
+    for (; n<41; n++)
+        printf("\n%d: %s\n", n, intToRoman(n));
 }

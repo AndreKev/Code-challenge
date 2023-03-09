@@ -1,4 +1,32 @@
 #include <stdio.h>
+
+struct GraphNode{
+    char letter = "\0";
+    struct GraphNode* lson;
+    struct GraphNode* rson;
+}
+
+void insertchar(struct GraphNode* G, char *s, char *p, int i, int j, char empty){
+    if (p[j]=='\0'&&s[i]=='\0')
+        return 1;
+    else if (p[j]&&!s[i])
+        return 0;
+    else if (s[i]&&!p[j])
+        return 0;
+    else{
+
+    }
+}
+
+int isMatch(char *s, char *p){
+    
+}
+
+
+int isMath(char *s, char *p){
+    struct GraphNode* G;
+}
+
 int isMatch(char *s, char *p){
     int i=0,j=0;
     while (p[j]){
